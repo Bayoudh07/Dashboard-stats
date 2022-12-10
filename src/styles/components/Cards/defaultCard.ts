@@ -5,7 +5,7 @@ export default makeStyles(() => ({
     display: "flex",
     alignItems: "center",
     paddingLeft: 20,
-    width: "12vw",
+    width: "11vw",
     background: "white",
     position: "relative",
     borderRadius: 20,

@@ -4,12 +4,16 @@ export default makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     alignItems: "flex-start",
+    width: "85vw",
   },
   navbarWrapper: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-around",
-    width: "85vw",
+  },
+  container: {
+    flexDirection: "column",
+    position: "relative",
   },
   search: {
     position: "relative",
@@ -51,5 +55,8 @@ export default makeStyles((theme: Theme) => ({
     "& h6": {
       marginLeft: 10,
     },
+  },
+  child: {
+    marginTop: 40,
   },
 }));

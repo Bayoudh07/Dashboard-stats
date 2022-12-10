@@ -48,8 +48,10 @@ export default makeStyles((theme: Theme) => ({
   },
   isSelected: {
     "&.MuiIconButton-root": {
-      color: "red",
-      borderRight: `3px solid green`,
+      color: "#e00078",
+      background: "rgb(255,217,238)",
+      borderTopRightRadius: 30,
+      borderBottomRightRadius: 30,
     },
   },
 }));
