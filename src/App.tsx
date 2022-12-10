@@ -1,19 +1,14 @@
 import React from "react";
 import DefaultCard from "./Components/Cards/defaultCard";
-import SideBar from "./Components/Sidebar";
 import EuroIcon from "@material-ui/icons/Euro";
-import logo from "./logo.svg";
+import Dashboard from "./Pages/Dashbaord";
+import DefaultLayout from "./Layout";
 
 function App() {
   return (
     <div>
-      {/* <SideBar /> */}
-      <DefaultCard
-        icon={<EuroIcon />}
-        name="Sales"
-        count={2555220}
-        color={"green"}
-      />
+      {/* <Dashboard /> */}
+      <DefaultLayout />
     </div>
   );
 }
