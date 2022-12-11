@@ -6,9 +6,8 @@ import TimelineIcon from "@material-ui/icons/Timeline";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 
 import useStyles from "../../styles/components/Sidebar/index";
-import { EPath } from "../../routes/ePaths.enum";
 
-const checkPath = (path: EPath, location: any) => {
+const checkPath = (path: string, location: any) => {
   if (location.toString().includes(path.toString())) {
     return true;
   } else {
@@ -17,10 +16,6 @@ const checkPath = (path: EPath, location: any) => {
 };
 
 function SideBar() {
-  console.log(
-    "indow.location.pathname =====<",
-    checkPath(EPath.DASHBOARD, window.location.pathname)
-  );
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -30,7 +25,7 @@ function SideBar() {
       </div>
       <IconButton
         className={
-          checkPath(EPath.DASHBOARD, window.location.pathname)
+          checkPath("/dashboard", window.location.pathname)
             ? classes.isSelected
             : ""
         }

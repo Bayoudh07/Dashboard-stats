@@ -1,17 +1,17 @@
 import axios from "axios";
 
 class BrandService {
-  constructor(private readonly urlBrand = "localhost:8080/api" + "/getBrand") {}
+  constructor(
+    private readonly urlBrand = "http://localhost:8080/api" + "/getBrand"
+  ) {}
 
-  async getBrandService() {
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      },
-    };
+  async getBrandService(id: string) {
     try {
-      return await axios.get(this.urlBrand, config);
+      return await axios.get(this.urlBrand, {
+        headers: {
+          id_firebase: id,
+        },
+      });
     } catch (error) {
       throw error;
     }

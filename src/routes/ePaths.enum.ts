@@ -1,4 +1,4 @@
 export enum EPath {
-  DASHBOARD = "/",
-  INFLUENCE = "/Influence",
+  DASHBOARD = "/dashboard/:id",
+  INFLUENCE = "/influence",
 }

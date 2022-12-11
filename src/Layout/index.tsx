@@ -5,12 +5,15 @@ import Switch from "@material-ui/core/Switch";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
+import { observer } from "mobx-react";
 
 import useStyles from "../styles/layout";
 import SideBar from "../Components/Sidebar";
+import { useGlobalContext } from "../context";
 
-function DefaultLayout(props: any) {
+const DefaultLayout = observer((props: any) => {
   const classes = useStyles();
+  const { brandStore } = useGlobalContext();
   return (
     <div className={classes.root}>
       <div>
@@ -42,16 +45,16 @@ function DefaultLayout(props: any) {
           </Typography>
           <div className={classes.avatarWrapper}>
             <Avatar
-              alt="Remy Sharp"
-              src="https://firebasestorage.googleapis.com/v0/b/shopmyinfluens.appspot.com/o/shopmyinfluens%2FBrands%2Fclassic_brands%2Fkiabi_512.jpg?alt=media"
+              alt={brandStore.brand.displayName}
+              src={brandStore.brand.pic}
             />
-            <h6>Name</h6>
+            <h6>{brandStore.brand.displayName}</h6>
           </div>
         </div>
         <div className={classes.child}>{props.children}</div>
       </div>
     </div>
   );
-}
+});
 
 export default DefaultLayout;

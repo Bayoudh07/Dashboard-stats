@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "../Layout";
 import Dashboard from "../Pages/Dashbaord";
 
@@ -14,30 +14,22 @@ import { EPath } from "./ePaths.enum";
 const routes: IRoute[] = [
   {
     path: EPath.DASHBOARD,
-    component: () => (
+    component: (
       <DefaultLayout>
         <Dashboard />
       </DefaultLayout>
     ),
-    exact: true,
   },
 ];
 
 const RouterComponent = () => {
   return (
     <Router>
-      <div>
-        <Switch>
-          {routes.map((route: IRoute, index: number) => (
-            <Route
-              key={index}
-              path={route.path}
-              component={route.component}
-              exact={route.exact}
-            />
-          ))}
-        </Switch>
-      </div>
+      <Routes>
+        {routes.map((route: IRoute, index: number) => (
+          <Route key={index} path={route.path} element={route.component} />
+        ))}
+      </Routes>
     </Router>
   );
 };
