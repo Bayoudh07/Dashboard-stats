@@ -4,7 +4,7 @@ import { GlobalContextProvider } from "./context";
 
 function App() {
   return (
-    <div style={{ background: "#c7eeff" }}>
+    <div>
       <GlobalContextProvider>
         <RouterComponent />
       </GlobalContextProvider>

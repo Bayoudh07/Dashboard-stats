@@ -4,9 +4,9 @@ export default makeStyles(() => ({
   root: {
     display: "flex",
     alignItems: "center",
-    paddingLeft: 20,
-    paddingRight: 10,
-    width: "11vw",
+    paddingLeft: 1,
+    paddingRight: 18,
+    width: "10.5vw",
     background: "white",
     position: "relative",
     borderRadius: 20,
